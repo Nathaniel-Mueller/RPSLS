@@ -1,0 +1,11 @@
+1. Welcome the user to the game 
+2. Print the game rules
+3. Ask how many players will be playing
+4. Def a function to check user input
+5. Whenever a user input is incorrect, ask for a new one. Repeat until input is correct
+6. If only 1 human player, use class with one NPC, else use class without NPC
+7. For NPC class, assign random gestures to be used after player correctly inputs a gesture
+8. For Non-NPC class, allow player 1 and player 2 to select their own gestures, checking inputs each time
+9. Compare gestures to see who wins the round
+10. Run the game until one side reaches 3 rounds won
+11. Print the winner of the game, and ask if they would like to play again
