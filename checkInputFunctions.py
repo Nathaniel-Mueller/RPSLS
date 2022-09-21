@@ -1,3 +1,6 @@
+from tkinter import W
+
+
 def checkUserInputYesNo(userInput):
         userInput = userInput.casefold()
         if userInput == "yes" or userInput == "no":
@@ -20,11 +23,27 @@ def checkUserInput(userInput):
     return userInput
 
 def checkIfNumber(userInput):
-    if userInput.isdigit() == True:
-        userInput = int(userInput)
+    while isinstance(userInput, str): 
+        if userInput.isdigit() == True:
+            userInput = int(userInput)
+        else:
+            while userInput.isdigit() == False:
+                userInput = input("I'm sorry, that wasn't a number, please try again. ")
+                if userInput.isdigit() == True:
+                    userInput = int(userInput)
+                    return userInput
     else:
-        while userInput.isdigit() != True:
-            userInput = input("I'm sorry, that wasn't a number, please try again. ")
-            if userInput.isdigit() == True:
-                userInput = int(userInput)
+        pass
     return userInput
+
+def checkNumberRange(userInput):
+        userInput = checkIfNumber(userInput)
+        while userInput > 2 or userInput < 1:
+            if userInput > 2:
+                userInput = input("That's too many players! Please try again. ")
+                userInput = checkIfNumber(userInput)  
+            elif userInput < 1:
+                userInput = input("You have to select at least one player! Please try again. ")
+                userInput = checkIfNumber(userInput)
+        return userInput
+
