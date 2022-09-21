@@ -18,3 +18,13 @@ def checkUserInput(userInput):
             userInput = input("I'm sorry, that was an incorrect input, please try again! ")
             userInput = userInput.casefold()
     return userInput
+
+def checkIfNumber(userInput):
+    if userInput.isdigit() == True:
+        userInput = int(userInput)
+    else:
+        while userInput.isdigit() != True:
+            userInput = input("I'm sorry, that wasn't a number, please try again. ")
+            if userInput.isdigit() == True:
+                userInput = int(userInput)
+    return userInput
