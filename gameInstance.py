@@ -5,7 +5,8 @@ from checkInputFunctions import *
 class Game:
     
     def __init__(self):
-        self.playercount = 0
+        self.player_count = 0
+        self.player_names = []
         
     
         
@@ -42,3 +43,12 @@ class Game:
         elif input == 2:
             select = RockPaperScissorsTwoPlayer()
             return select
+        
+    def playerNames(self, userInput):
+        if userInput == 1:
+            self.player_names.append(input("Please enter your name. "))
+        elif userInput == 2:
+            playerOne = input("Player one, please enter your name. ")
+            playerTwo = input("Player two, please enter your name. ")
+            self.player_names.append(playerOne)
+            self.player_names.append(playerTwo)
