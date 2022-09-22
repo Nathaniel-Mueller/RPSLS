@@ -13,7 +13,19 @@ def checkUserInputYesNo(userInput):
     
 def checkUserInput(userInput):
     correctInputs = ["rock", "paper", "scissors", "lizard", "spock"]
+    numberedInputs = ["1", "2", "3", "4", "5"]
     userInput = userInput.casefold()
+    if userInput in numberedInputs:
+        if userInput == "1":
+            userInput = "rock"
+        elif userInput == "2":
+            userInput = "paper"
+        elif userInput == "3":
+            userInput = "scissors"
+        elif userInput == "4":
+            userInput = "lizard"
+        elif userInput == "5":
+            userInput = "spock"
     if userInput in correctInputs:
         pass
     else:
