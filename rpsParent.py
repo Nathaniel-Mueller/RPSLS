@@ -25,7 +25,9 @@ class RockPaperScissors:
             self.playerChoice()
             self.checkRoundWinner(self.current_gesture_player_one, self.current_gesture_player_two)
         if self.first_player_rounds_won == 2:
-            print(f"")
+            print(f"Game over! {self.player_one} wins!")
+        elif self.second_player_rounds_won == 2:
+            print (f"Game over! {self.player_two} wins!")
 
     def playerChoice(self):   # Needs to be defined in parent class to use in parent methods
         pass
