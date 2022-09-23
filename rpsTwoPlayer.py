@@ -4,9 +4,9 @@ class RockPaperScissorsTwoPlayer(RockPaperScissors):
     
     
     def __init__(self, nameOne, nameTwo):
-        super().__init__()
         self.player_one_name = nameOne
         self.player_two_name = nameTwo
+        super().__init__(nameOne, nameTwo)
         self.welcomeMessage()
         
     def welcomeMessage(self):
