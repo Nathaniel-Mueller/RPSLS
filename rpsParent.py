@@ -1,9 +1,6 @@
 from gestures import Gestures
 from checkInputFunctions import *
-import time
-
-def wait():             # Helper func
-    time.sleep(1)
+from time import sleep as s     # time.sleep() = s()
 
 class RockPaperScissors:
     
@@ -33,7 +30,7 @@ class RockPaperScissors:
         pass
         
 
-    def checkRoundWinner(self, inputOne, inputTwo):
+    def checkRoundWinner(self, inputOne, inputTwo):     # Gets each input and compares them to declare a round winner
         if inputOne == inputTwo:
             print ("Tie! Play again!")
         elif inputOne == "rock":
