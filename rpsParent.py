@@ -1,5 +1,9 @@
 from gestures import Gestures
 from checkInputFunctions import *
+import time
+
+def wait():             # Helper func
+    time.sleep(1)
 
 class RockPaperScissors:
     
@@ -14,21 +18,17 @@ class RockPaperScissors:
         self.current_gesture_player_one = ""
         self.current_gesture_player_two = ""
         
-    def gameRound(self):
+    def gameRounds(self):
         while self.first_player_rounds_won < 2 and self.second_player_rounds_won <2:
             print(f"Round {self.current_round}")
             self.gestures.listGestures()
             self.playerChoice()
+            self.checkRoundWinner(self.current_gesture_player_one, self.current_gesture_player_two)
+        if self.first_player_rounds_won == 2:
+            print(f"")
 
-    def playerChoice(self):
-        string = input(f"{self.player_one}, please choose a gesture by typing its name or number. ")
-        string = checkUserInput(string)
-        self.current_gesture_player_one = string
-        string = self.gestures.chooseGesture(self.player_one, self.current_gesture_player_one)
-        string = input(f"{self.player_two}, please choose a gesture by typing its name or number. ")
-        string = checkUserInput(string)
-        self.current_gesture_player_two = string
-        string = self.gestures.chooseGesture(self.player_two, self.current_gesture_player_two)
+    def playerChoice(self):   # Needs to be defined in parent class to use in parent methods
+        pass
         
 
     def checkRoundWinner(self, inputOne, inputTwo):
@@ -37,26 +37,46 @@ class RockPaperScissors:
         elif inputOne == "rock":
             if inputTwo == "scissors" or inputTwo == "lizard":
                 print (f"{inputOne} beats {inputTwo}!")
+                print (f"{self.player_one} wins this round!")
+                self.first_player_rounds_won += 1
             elif inputTwo == "spock" or inputTwo == "paper":
                 print(f"{inputTwo} beats {inputOne}!")
+                print (f"{self.player_two} wins this round!")
+                self.second_player_rounds_won += 1
         elif inputOne == "paper":
             if inputTwo == "rock" or inputTwo == "spock":
                 print(f"{inputOne} beats {inputTwo}!")
+                print (f"{self.player_one} wins this round!")
+                self.first_player_rounds_won += 1
             elif inputTwo == "scissors" or inputTwo == "lizard":
                 print(f"{inputTwo} beats {inputOne}!")
+                print (f"{self.player_two} wins this round!")
+                self.second_player_rounds_won += 1
         elif inputOne == "scissors":
             if inputTwo == "lizard" or inputTwo == "paper":
                 print(f"{inputOne} beats {inputTwo}!")
+                print (f"{self.player_one} wins this round!")
+                self.first_player_rounds_won += 1
             elif inputTwo == "rock" or inputTwo == "spock":
                 print(f"{inputTwo} beats {inputOne}!")
+                print (f"{self.player_two} wins this round!")
+                self.second_player_rounds_won += 1
         elif inputOne == "lizard":
             if inputTwo == "spock" or inputTwo == "paper":
                 print(f"{inputOne} beats {inputTwo}!")
+                print (f"{self.player_one} wins this round!")
+                self.first_player_rounds_won += 1
             elif inputTwo == "scissors" or inputTwo == "rock":
                 print(f"{inputTwo} beats {inputOne}!")
+                print (f"{self.player_two} wins this round!")
+                self.second_player_rounds_won += 1
         elif inputOne == "spock":
             if inputTwo == "rock" or inputTwo == "scissors":
                 print(f"{inputOne} beats {inputTwo}!")
+                print (f"{self.player_one} wins this round!")
+                self.first_player_rounds_won += 1
             elif inputTwo == "lizard" or inputTwo == "paper":
                 print(f"{inputTwo} beats {inputOne}!")
+                print (f"{self.player_two} wins this round!")
+                self.second_player_rounds_won += 1
         self.current_round += 1
