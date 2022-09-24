@@ -26,3 +26,4 @@ class RockPaperScissorsNPC(RockPaperScissors):
         string = self.gestures.chooseGesture(self.player_one, self.current_gesture_player_one)
         self.current_gesture_player_two = self.getNPCGesture()
         self.gestures.chooseGesture(self.player_two, self.current_gesture_player_two)
+        print (f"{self.player_one} has chosen {self.current_gesture_player_one} and {self.player_two} has chosen {self.current_gesture_player_two}.")

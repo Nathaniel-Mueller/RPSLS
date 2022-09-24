@@ -22,3 +22,4 @@ class RockPaperScissorsTwoPlayer(RockPaperScissors):
         string = checkUserInput(string)
         self.current_gesture_player_two = string
         string = self.gestures.chooseGesture(self.player_two, self.current_gesture_player_two)
+        print (f"{self.player_one} has chosen {self.current_gesture_player_one} and {self.player_two} has chosen {self.current_gesture_player_two}.")
