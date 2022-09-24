@@ -1,5 +1,4 @@
-from tkinter import W
-
+# List of input check functions to import to other classes
 
 def checkUserInputYesNo(userInput):
         userInput = userInput.casefold()
@@ -15,23 +14,14 @@ def checkUserInput(userInput):
     correctInputs = ["rock", "paper", "scissors", "lizard", "spock"]
     numberedInputs = ["1", "2", "3", "4", "5"]
     userInput = userInput.casefold()
-    if userInput in numberedInputs:
-        if userInput == "1":
-            userInput = "rock"
-        elif userInput == "2":
-            userInput = "paper"
-        elif userInput == "3":
-            userInput = "scissors"
-        elif userInput == "4":
-            userInput = "lizard"
-        elif userInput == "5":
-            userInput = "spock"
+    userInput = numberToGesture(userInput)
     if userInput in correctInputs:
         pass
     else:
-        while userInput not in correctInputs:
+        while userInput not in correctInputs and userInput not in numberedInputs:
             userInput = input("I'm sorry, that was an incorrect input, please try again! ")
             userInput = userInput.casefold()
+            userInput = numberToGesture(userInput)
     return userInput
 
 def checkIfNumber(userInput):
@@ -59,3 +49,17 @@ def checkNumberRange(userInput):
                 userInput = checkIfNumber(userInput)
         return userInput
 
+def numberToGesture(userInput):
+    numberedInputs = ["1","2","3","4","5"]
+    if userInput in numberedInputs:
+        if userInput == "1":
+            userInput = "rock"
+        elif userInput == "2":
+            userInput = "paper"
+        elif userInput == "3":
+            userInput = "scissors"
+        elif userInput == "4":
+            userInput = "lizard"
+        elif userInput == "5":
+            userInput = "spock"
+    return userInput
