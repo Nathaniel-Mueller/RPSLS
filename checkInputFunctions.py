@@ -63,3 +63,8 @@ def numberToGesture(userInput):
         elif userInput == "5":
             userInput = "spock"
     return userInput
+
+def checkEmptyString (userInput):
+    while userInput == "":
+        userInput = ("You have to enter something! Please try again. ")
+    return userInput
