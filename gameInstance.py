@@ -1,3 +1,4 @@
+from tabnanny import check
 from rpsNPC import *
 from rpsTwoPlayer import RockPaperScissorsTwoPlayer
 from checkInputFunctions import *
@@ -12,7 +13,7 @@ class Game:
     
         
     def welcomeMessage(self):
-        yesOrNo = input("Hello! Welcome to 'Rock Paper Scissors Lizard Spock'! Would you like to view the rules? ")
+        yesOrNo = input("Hello! Welcome to 'Rock Paper Scissors Lizard Spock'! Each game will be played best 2 out of 3. Would you like to view the rules? ")
         yesOrNo = checkUserInputYesNo(yesOrNo)
         if yesOrNo == "yes":
             print ("""
@@ -29,7 +30,6 @@ class Game:
                     """)
         else:
             pass
-        
     def runGame(self):
         self.welcomeMessage()
         self.player_count = input("Please enter the number of players, 1 or 2: ")
@@ -47,9 +47,13 @@ class Game:
         
     def getPlayerNames(self, userInput):
         if userInput == 1:
-            self.player_names.append(input("Please enter your name. "))
+            playerOne = input ("Please enter your name. ")
+            playerOne = checkEmptyString(playerOne)
+            self.player_names.append(playerOne)
         elif userInput == 2:
             playerOne = input("Player one, please enter your name. ")
-            playerTwo = input("Player two, please enter your name. ")
+            playerOne = checkEmptyString(playerOne)
             self.player_names.append(playerOne)
+            playerTwo = input("Player two, please enter your name. ")
+            playerTwo = checkEmptyString(playerTwo)
             self.player_names.append(playerTwo)
