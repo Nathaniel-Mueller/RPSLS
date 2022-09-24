@@ -13,7 +13,7 @@ class RockPaperScissorsNPC(RockPaperScissors):
         
     def welcomeMessage(self):
         print(f"Welcome {self.name}! You have chosen the 1 player game!")
-        s(3)    # See rpsParent: time.sleep() = s()
+        s(2)    # See rpsParent line 3: time.sleep() = s()
         
     def getNPCGesture(self):
         choice = rc(self.gestures.available_gestures)

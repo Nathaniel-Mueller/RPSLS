@@ -17,10 +17,15 @@ class RockPaperScissors:
         
     def gameRounds(self):
         while self.first_player_rounds_won < 2 and self.second_player_rounds_won <2:
+            print ("")
             print(f"Round {self.current_round}")
+            print ("")
             self.gestures.listGestures()
+            s(1)
             self.playerChoice()
+            s(1)
             self.checkRoundWinner(self.current_gesture_player_one, self.current_gesture_player_two)
+            s(1)
         if self.first_player_rounds_won == 2:
             print(f"Game over! {self.player_one} wins!")
         elif self.second_player_rounds_won == 2:
@@ -36,46 +41,76 @@ class RockPaperScissors:
         elif inputOne == "rock":
             if inputTwo == "scissors" or inputTwo == "lizard":
                 print (f"{inputOne} beats {inputTwo}!")
+                s(1)
                 print (f"{self.player_one} wins this round!")
                 self.first_player_rounds_won += 1
+                s(1)
+                print(f"{self.player_one} has {self.first_player_rounds_won}/2 wins!")
             elif inputTwo == "spock" or inputTwo == "paper":
                 print(f"{inputTwo} beats {inputOne}!")
+                s(1)
                 print (f"{self.player_two} wins this round!")
                 self.second_player_rounds_won += 1
+                s(1)
+                print (f"{self.player_two} has {self.second_player_rounds_won}/2 wins!")
         elif inputOne == "paper":
             if inputTwo == "rock" or inputTwo == "spock":
                 print(f"{inputOne} beats {inputTwo}!")
+                s(1)
                 print (f"{self.player_one} wins this round!")
                 self.first_player_rounds_won += 1
+                s(1)
+                print(f"{self.player_one} has {self.first_player_rounds_won}/2 wins!")
             elif inputTwo == "scissors" or inputTwo == "lizard":
                 print(f"{inputTwo} beats {inputOne}!")
+                s(1)
                 print (f"{self.player_two} wins this round!")
                 self.second_player_rounds_won += 1
+                s(1)
+                print (f"{self.player_two} has {self.second_player_rounds_won}/2 wins!")
         elif inputOne == "scissors":
             if inputTwo == "lizard" or inputTwo == "paper":
                 print(f"{inputOne} beats {inputTwo}!")
+                s(1)
                 print (f"{self.player_one} wins this round!")
                 self.first_player_rounds_won += 1
+                s(1)
+                print(f"{self.player_one} has {self.first_player_rounds_won}/2 wins!")
             elif inputTwo == "rock" or inputTwo == "spock":
                 print(f"{inputTwo} beats {inputOne}!")
+                s(1)
                 print (f"{self.player_two} wins this round!")
                 self.second_player_rounds_won += 1
+                s(1)
+                print (f"{self.player_two} has {self.second_player_rounds_won}/2 wins!")
         elif inputOne == "lizard":
             if inputTwo == "spock" or inputTwo == "paper":
                 print(f"{inputOne} beats {inputTwo}!")
+                s(1)
                 print (f"{self.player_one} wins this round!")
                 self.first_player_rounds_won += 1
+                s(1)
+                print(f"{self.player_one} has {self.first_player_rounds_won}/2 wins!")
             elif inputTwo == "scissors" or inputTwo == "rock":
                 print(f"{inputTwo} beats {inputOne}!")
+                s(1)
                 print (f"{self.player_two} wins this round!")
                 self.second_player_rounds_won += 1
+                s(1)
+                print (f"{self.player_two} has {self.second_player_rounds_won}/2 wins!")
         elif inputOne == "spock":
             if inputTwo == "rock" or inputTwo == "scissors":
                 print(f"{inputOne} beats {inputTwo}!")
+                s(1)
                 print (f"{self.player_one} wins this round!")
                 self.first_player_rounds_won += 1
+                s(1)
+                print(f"{self.player_one} has {self.first_player_rounds_won}/2 wins!")
             elif inputTwo == "lizard" or inputTwo == "paper":
                 print(f"{inputTwo} beats {inputOne}!")
+                s(1)
                 print (f"{self.player_two} wins this round!")
                 self.second_player_rounds_won += 1
+                s(1)
+                print (f"{self.player_two} has {self.second_player_rounds_won}/2 wins!")
         self.current_round += 1

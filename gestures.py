@@ -1,4 +1,5 @@
 from checkInputFunctions import *
+from time import sleep as s
 
 class Gestures:
     
@@ -17,4 +18,5 @@ class Gestures:
         print ("Your available gestures are:")
         for gestures in self.available_gestures:
             print(f"{number}: {gestures}")
+            s(.75)
             number += 1
