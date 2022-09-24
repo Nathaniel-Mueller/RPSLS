@@ -31,12 +31,20 @@ class Game:
             pass
     def runGame(self):
         self.welcomeMessage()
-        self.player_count = input("Please enter the number of players, 1 or 2: ")
-        self.player_count = checkNumberRange(self.player_count)
-        self.getPlayerNames(self.player_count)
-        self.chooseMode(self.player_count)
-        self.chosenMode.gameRounds()
-        
+        while True:
+            self.player_count = input("Please enter the number of players, 1 or 2: ")
+            self.player_count = checkNumberRange(self.player_count)
+            self.getPlayerNames(self.player_count)
+            self.chooseMode(self.player_count)
+            self.chosenMode.gameRounds()
+            string = input("Would you like to play another game? ")
+            string = checkUserInputYesNo(string)
+            if string == "yes":
+                pass
+            elif string == "no":
+                print ("Thanks for playing!")
+                break           
+            
     
     def chooseMode(self, input):
         if input == 1:
