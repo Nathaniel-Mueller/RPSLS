@@ -1,4 +1,3 @@
-from tabnanny import check
 from rpsNPC import *
 from rpsTwoPlayer import RockPaperScissorsTwoPlayer
 from checkInputFunctions import *
