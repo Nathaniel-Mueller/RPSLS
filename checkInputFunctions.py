@@ -12,13 +12,12 @@ def checkUserInputYesNo(userInput):
     
 def checkUserInput(userInput):
     correctInputs = ["rock", "paper", "scissors", "lizard", "spock"]
-    numberedInputs = ["1", "2", "3", "4", "5"]
     userInput = userInput.casefold()
     userInput = numberToGesture(userInput)
     if userInput in correctInputs:
         pass
     else:
-        while userInput not in correctInputs and userInput not in numberedInputs:
+        while userInput not in correctInputs:
             userInput = input("I'm sorry, that was an incorrect input, please try again! ")
             userInput = userInput.casefold()
             userInput = numberToGesture(userInput)
@@ -66,5 +65,5 @@ def numberToGesture(userInput):     # Allows user to input numbers instead of wh
 
 def checkEmptyString (userInput):       # Check if name input is empty or only spaces
     while userInput == "" or userInput.isspace() == True:
-        userInput = ("You have to enter something! Please try again. ")
+        userInput = input("You have to enter something! Please try again. ")
     return userInput
