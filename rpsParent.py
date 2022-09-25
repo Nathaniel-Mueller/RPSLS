@@ -37,7 +37,7 @@ class RockPaperScissors:
 
     def checkRoundWinner(self, inputOne, inputTwo):     # Gets each input and compares them to declare a round winner
         if inputOne == inputTwo:
-            print (f"It's a tie! \n{self.player_one} has {self.first_player_rounds_won}/2 wins\n{self.player_two} has {self.second_player_rounds_won}/2 wins\nPlay again!")
+            print (f"Both players selected {inputOne}, it's a tie! \n{self.player_one} has {self.first_player_rounds_won}/2 wins\n{self.player_two} has {self.second_player_rounds_won}/2 wins\nPlay again!")
         elif inputOne == "rock":
             if inputTwo == "scissors" or inputTwo == "lizard":
                 print (f"{inputOne} beats {inputTwo}!")
