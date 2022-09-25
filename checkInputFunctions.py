@@ -12,6 +12,7 @@ def checkUserInputYesNo(userInput):
     
 def checkUserInput(userInput):
     correctInputs = ["rock", "paper", "scissors", "lizard", "spock"]
+    numberedInputs = ["1", "2", "3", "4", "5"]
     userInput = userInput.casefold()
     userInput = numberToGesture(userInput)
     if userInput in correctInputs:
