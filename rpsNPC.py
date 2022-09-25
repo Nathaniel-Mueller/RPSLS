@@ -19,7 +19,7 @@ class RockPaperScissorsNPC(RockPaperScissors):
         choice = rc(self.gestures.available_gestures)
         return choice
     
-    def playerChoice(self):
+    def playerChoice(self):     # Get gesture input from player and assign random to NPC
         string = input(f"{self.player_one}, please choose a gesture by typing its name or number. ")
         string = checkUserInput(string)
         self.current_gesture_player_one = string

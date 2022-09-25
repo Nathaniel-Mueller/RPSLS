@@ -24,7 +24,7 @@ def checkUserInput(userInput):
             userInput = numberToGesture(userInput)
     return userInput
 
-def checkIfNumber(userInput):
+def checkIfNumber(userInput):       # Determine if userInput is a number, even if it's a string
     while isinstance(userInput, str): 
         if userInput.isdigit() == True:
             userInput = int(userInput)
@@ -38,7 +38,7 @@ def checkIfNumber(userInput):
         pass
     return userInput
 
-def checkNumberRange(userInput):
+def checkNumberRange(userInput):        # Checks to make sure amount of players selected is within range
         userInput = checkIfNumber(userInput)
         while userInput > 2 or userInput < 1:
             if userInput > 2:
@@ -49,7 +49,7 @@ def checkNumberRange(userInput):
                 userInput = checkIfNumber(userInput)
         return userInput
 
-def numberToGesture(userInput):
+def numberToGesture(userInput):     # Allows user to input numbers instead of whole words for chooseGesture
     numberedInputs = ["1","2","3","4","5"]
     if userInput in numberedInputs:
         if userInput == "1":
@@ -64,7 +64,7 @@ def numberToGesture(userInput):
             userInput = "spock"
     return userInput
 
-def checkEmptyString (userInput):
-    while userInput == "":
+def checkEmptyString (userInput):       # Check if name input is empty or only spaces
+    while userInput == "" or userInput.isspace() == True:
         userInput = ("You have to enter something! Please try again. ")
     return userInput

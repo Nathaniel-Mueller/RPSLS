@@ -13,7 +13,7 @@ class RockPaperScissorsTwoPlayer(RockPaperScissors):
         print(f"Welcome {self.player_one_name} and {self.player_two_name}! You have chosen the 2 player game!")
         s(2)    # See rpsParent line 3: time.sleep() = s()
         
-    def playerChoice(self):
+    def playerChoice(self):     # Get gestures from players
         string = input(f"{self.player_one}, please choose a gesture by typing its name or number. ")
         string = checkUserInput(string)
         self.current_gesture_player_one = string

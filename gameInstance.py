@@ -46,13 +46,13 @@ class Game:
                 break           
             
     
-    def chooseMode(self, input):
+    def chooseMode(self, input):        # Select a class based on amount of players entered
         if input == 1:
             self.chosenMode = RockPaperScissorsNPC(self.player_names[0])
         elif input == 2:
             self.chosenMode = RockPaperScissorsTwoPlayer(self.player_names[0], self.player_names[1])
         
-    def getPlayerNames(self, userInput):
+    def getPlayerNames(self, userInput):        # Grab names from input and assign to player(s)
         if userInput == 1:
             playerOne = input ("Please enter your name. ")
             playerOne = checkEmptyString(playerOne)
