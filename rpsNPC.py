@@ -15,7 +15,7 @@ class RockPaperScissorsNPC(RockPaperScissors):
         print(f"Welcome {self.name}! You have chosen the 1 player game!")
         s(2)    # See rpsParent line 3: time.sleep() = s()
         
-    def getNPCGesture(self):
+    def getNPCGesture(self):        # Selects a random gesture for the NPC
         choice = rc(self.gestures.available_gestures)
         return choice
     

@@ -11,6 +11,7 @@ class Gestures:
     def chooseGesture(self, selectedPlayer, gestureChoice):
         self.current_gesture = checkUserInput(gestureChoice)
         print (f"{selectedPlayer} has chosen a gesture.")
+        s(1)
         return self.current_gesture
     
     def listGestures(self):
@@ -18,5 +19,5 @@ class Gestures:
         print ("Your available gestures are:")
         for gestures in self.available_gestures:
             print(f"{number}: {gestures}")
-            s(.75)
+            s(.5)
             number += 1

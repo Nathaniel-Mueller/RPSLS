@@ -14,6 +14,7 @@ class Game:
     def welcomeMessage(self):
         yesOrNo = input("Hello! Welcome to \"Rock Paper Scissors Lizard Spock\"!\nEach game will be played best 2 out of 3. Would you like to view the rules? ")
         yesOrNo = checkUserInputYesNo(yesOrNo)
+        s(1)
         if yesOrNo == "yes":
             print ("Rock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock")
         else:
