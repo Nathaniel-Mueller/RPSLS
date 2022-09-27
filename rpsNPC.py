@@ -23,7 +23,7 @@ class RockPaperScissorsNPC(RockPaperScissors):
         string = input(f"{self.player_one}, please choose a gesture by typing its name or number. ")
         string = checkUserInput(string)
         self.current_gesture_player_one = string
-        string = self.gestures.chooseGesture(self.player_one, self.current_gesture_player_one)
+        self.gestures.chooseGesture(self.player_one, self.current_gesture_player_one)
         self.current_gesture_player_two = self.getNPCGesture()
         self.gestures.chooseGesture(self.player_two, self.current_gesture_player_two)
         print (f"{self.player_one} has chosen {self.current_gesture_player_one} and {self.player_two} has chosen {self.current_gesture_player_two}.")
